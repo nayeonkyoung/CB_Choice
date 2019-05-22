@@ -16,5 +16,20 @@ namespace CB_Choice
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CbList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnAdd_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
