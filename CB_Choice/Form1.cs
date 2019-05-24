@@ -30,16 +30,31 @@ namespace CB_Choice
                 this.cbList.Items.Add(SList[i]);
             }
             this.OrgStr = this.lblResult.Text;
+            if(this.cbList.Items.Count > 0)
+            {
+                this.cbList.SelectedIndex = 0;
+            }
         }
 
         private void CbList_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            this.lblResult.Text = this.OrgStr + this.cbList.Text;
         }
 
         private void BtnAdd_Click(object sender, EventArgs e)
         {
-
+            if(this.txtList.Text == "")
+            {
+            MessageBox.Show("추가할 항목을 선택하세요", "알림",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            this.txtList.Focus();
+            }
+            else
+            {
+                this.cbList.Items.Add(this.txtList.Text);
+                this.txtList.Text = "";
+                this.txtList.Focus();
+            }
         }
     }
 }
