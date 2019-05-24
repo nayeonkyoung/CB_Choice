@@ -75,6 +75,8 @@
             this.txtList.Name = "txtList";
             this.txtList.Size = new System.Drawing.Size(206, 21);
             this.txtList.TabIndex = 4;
+            this.txtList.TextChanged += new System.EventHandler(this.TxtList_TextChanged);
+            this.txtList.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtList_KeyPress);
             // 
             // Form1
             // 

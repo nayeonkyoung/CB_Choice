@@ -43,17 +43,36 @@ namespace CB_Choice
 
         private void BtnAdd_Click(object sender, EventArgs e)
         {
-            if(this.txtList.Text == "")
+            CheckInput();
+        }
+
+        private void TxtList_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CheckInput()
+        {
+            if (this.txtList.Text == "")
             {
-            MessageBox.Show("추가할 항목을 선택하세요", "알림",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            this.txtList.Focus();
+                MessageBox.Show("추가할 항목을 선택하세요", "알림",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                this.txtList.Focus();
             }
             else
             {
                 this.cbList.Items.Add(this.txtList.Text);
                 this.txtList.Text = "";
                 this.txtList.Focus();
+            }
+        }
+
+        private void TxtList_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                CheckInput();
+                e.Handled = true;
             }
         }
     }
